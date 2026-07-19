@@ -392,24 +392,161 @@ footer{
       overflow: hidden; 
     }
 
-    #baran-zontul-anma::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url("proje/baran.jpg") center/cover no-repeat;
-      opacity: 0.9;
-      z-index: -1; 
-    }
+   /* 🚗 LOGO BÜYÜTME VE MOBİL UYUM */
+header div img {
+  max-width: 60px !important; /* Logo boyutu büyütüldü */
+  height: auto;
+  object-fit: contain;
+}
 
-    #baran-zontul-anma h2,
-    #baran-zontul-anma p {
-      position: relative;
-      z-index: 1; 
-      margin: 10px 0;
-    }
+@media (max-width: 768px) {
+  header {
+    padding: 10px 20px !important; /* Mobilde daraltma */
+  }
+  header div img {
+    max-width: 45px !important; /* Mobilde taşmasın diye hafif dengelendi */
+  }
+}
+
+/* 📞 İLETİŞİM KISMINI KÜÇÜLTME */
+.contact-numbers-section {
+  padding: 20px 0 !important; /* Boşluklar azaltıldı */
+}
+.contact-numbers-section h2 {
+  font-size: 22px !important; /* Başlık küçültüldü */
+  margin-bottom: 15px !important;
+}
+.contact-numbers-section p {
+  margin: 5px 0 !important; /* Satır araları daraltıldı */
+}
+.contact-numbers-section a {
+  font-size: 17px !important; /* Telefon numaraları fontu küçültüldü */
+}
+
+/* 🕯️ ANMA KISMI DÜZELTME (MOBİLDE ÇAKIŞMAYI ÖNLER) */
+#baran-zontul-anma {
+  position: relative;
+  min-height: 400px; /* Sabit height yerine min-height yapıldı, böylece mobilde genişleyebilir */
+  height: auto !important; 
+  color: white; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em; /* Mobilde taşmaması için yazı boyutu optimize edildi */
+  text-shadow: 2px 2px 5px black; 
+  overflow: hidden; 
+  padding: 40px 20px; /* İçerik sıkışmasın diye padding eklendi */
+
+}
+
+/* 🔼 ÜST PANELİ (NAVBAR) KÜÇÜLTME */
+header {
+  padding: 8px 40px !important; /* Dikey boşluk 12px'den 8px'e düşürüldü, yatay dengelendi */
+}
+
+header h1 {
+  font-size: 16px !important; /* Başlık fontu 20px'den 16px'e çekildi */
+  padding-top: 0 !important;   /* Dikey hizalama sıfırlandı */
+  align-self: center;
+}
+
+/* ➡️ ÜST PANEL YAZISINI SAĞA KAYDIRMA */
+header h1 {
+  margin-left: 15px !important; /* Logodan sonra sağa doğru boşluk bırakır */
+  white-space: nowrap;          /* Yazının alt satıra geçmesini engeller */
+}
+
+/* 📱 Mobil Ekranlarda Aşırı Taşmayı Önlemek İçin */
+@media (max-width: 768px) {
+  header h1 {
+    margin-left: 8px !important; /* Mobilde ekran dar olduğu için mesafeyi biraz dengeler */
+  }
+}
+
+header nav a {
+  font-size: 13px !important;  /* Linklerin boyutu bir tık küçültüldü */
+  margin-left: 15px !important; /* Linklerin arasındaki mesafe daraltıldı */
+}
+
+/* 📱 Mobil Ekranlar İçin Ekstra Küçültme */
+@media (max-width: 768px) {
+  header {
+    padding: 6px 15px !important; /* Mobilde paneli iyice ince yapıyoruz */
+  }
+  header h1 {
+    font-size: 14px !important;
+  }
+  header nav a {
+    font-size: 11px !important;
+    margin-left: 8px !important;
+  }
+}
+
+/* 📝 TÜM YAZILARI ORANTILI KÜÇÜLTME */
+html, body {
+  /* Varsayılan yazı boyutunu bir tık aşağı çekerek tüm siteyi etkiliyoruz */
+  font-size: 15px !important; 
+}
+
+/* Tüm başlıkları ve paragrafları genel olarak bir tık ufaltıyoruz */
+h2 {
+  font-size: 1.8em !important; /* Önceki 2.2em veya 36px değerlerinden küçültüldü */
+}
+
+h3 {
+  font-size: 1.4em !important;
+}
+
+p, li, a {
+  font-size: 0.95em !important;
+}
+
+/* Kahraman (Hero) alanındaki devasa yazıyı bir tık yumuşatma */
+.hero h2 {
+  font-size: 36px !important; /* 44px'den düşürüldü */
+}
+.hero p {
+  font-size: 16px !important; /* 19px'den düşürüldü */
+}
+
+/* İstatistik rakamlarını dengeleme */
+.stat h3 {
+  font-size: 32px !important; /* 40px'den düşürüldü */
+}
+
+/* Anma kısmındaki başlığı beyaz yaparak okunurluğu artırma ve küçültme */
+#baran-zontul-anma h2 {
+  font-size: 22px !important;
+  color: #fff !important;
+}
+#baran-zontul-anma p {
+  font-size: 15px !important;
+  color: #eee !important;
+}
+
+/* 📱 Mobil Cihazlar İçin Ekstra Uyum */
+@media (max-width: 768px) {
+  html, body {
+    font-size: 14px !important; /* Telefonda yazılar sıkışmasın diye bir tık daha ideal boyuta çekildi */
+  }
+  .hero h2 {
+    font-size: 28px !important;
+  }
+  header nav a {
+    font-size: 12px !important; /* Menü linkleri mobilde taşmasın */
+    margin-left: 10px !important;
+  }
+}
+
+#baran-zontul-anma::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url("proje/baran.jpg") center/cover no-repeat;
+  opacity: 0.9;
+  z-index: -1; 
+}
 
     /* HEADER */
 header{
@@ -427,7 +564,7 @@ header{
 
   
   <div style="display: flex;">
-    <img src="./proje/ysk-logo.jpg" style="max-width: 10%; padding-right: 2%;" />
+    <img src="images/logo.png" style="max-width: 10%; padding-right: 2%;" />
     <h1 style="padding-top: 2%;">Yurt Sürücü Kursu</h1></div>
   <nav>
     <a href="#hero">Ana Sayfa</a>
@@ -456,9 +593,8 @@ header{
 
 <section id="about" class="about fade-in">
   <img 
-  src="images/ataturk.jpg"
-  alt="Mustafa Kemal Atatürk"
-  style="width:400px;border-radius:15px;box-shadow:0 4px 10px rgba(0,0,0,0.2);" />
+  <img src="./images/ataturk.jpg" alt="Mustafa Kemal Atatürk" />
+ 
 
   
 
